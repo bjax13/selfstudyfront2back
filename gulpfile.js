@@ -23,34 +23,34 @@ var cachebust = new CacheBuster();
 
 
 gulp.task('build-css', [], function () {
-    return gulp.src(['./public/css/reset.css','./public/**/*.css'])
+    return gulp.src(['./public/css/reset.css','./public/css/**/*.css'])
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(cachebust.resources())
         .pipe(concat('styles.css'))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./public/dist'));
 });
 
 
 gulp.task('build-js', [], function() {
-   return gulp.src(['./public/app.js','./public/**/*.js'])
+   return gulp.src(['./public/app.js', './public/js/**/*.js'])
       .pipe(sourcemaps.init())
       .pipe(print())
       .pipe(babel({ presets: ['es2015'] }))
       .pipe(concat('bundle.js'))
       //.pipe(uglify())
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./dist/js'));
+      .pipe(gulp.dest('./public/dist/js'));
 });
 
 gulp.task('build', [ 'build-css', 'build-js'], function() {
-    return gulp.src('index.html')
+    return gulp.src('./public/index.html')
         .pipe(cachebust.references())
         .pipe(gulp.dest('dist'));
 
 });
 
 gulp.task('watch', function() {
-    return gulp.watch(['./index.html','./app.js','./**/*.html', './**/*.css', './**/*.js'], ['build']);
+    return gulp.watch(['./public/index.html','./public/app.js','./public/**/*.html', './public/css/**/*.css', './public/js/**/*.js'], ['build']);
 });
