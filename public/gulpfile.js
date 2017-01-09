@@ -52,5 +52,5 @@ gulp.task('build', [ 'build-css', 'build-js'], function() {
 });
 
 gulp.task('watch', function() {
-    return gulp.watch(['./public/index.html','./public/app.js','./public/**/*.html', './public/**/*.css', './public/**/*.js'], ['build']);
+    return gulp.watch(['./index.html','./app.js','./**/*.html', './**/*.css', './**/*.js'], ['build']);
 });
