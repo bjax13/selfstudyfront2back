@@ -17,13 +17,16 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 });
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope) {});
+angular.module('app').controller('mainCtrl', function ($scope) {
+
+  $scope.test = 'again';
+});
 'use strict';
 
 angular.module('app').directive('navy', function () {
   return {
     restrict: 'E',
-    templateUrl: "../../views/nav.html"
+    templateUrl: "../views/navTpl.html"
   };
 });
 //# sourceMappingURL=bundle.js.map

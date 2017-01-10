@@ -46,4 +46,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.nav-list {
+  display: flex;
+  justify-content: center; }
+
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px; }
+
 /*# sourceMappingURL=maps/styles.css.map */
