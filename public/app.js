@@ -15,6 +15,6 @@ angular.module('app',['ui.router'])
       .state('other', {
         url: '/other',
         templateUrl: './views/other.html'
-      })
+      });
 
  });
